@@ -1,5 +1,6 @@
 package phoi.hello_spring.service;
 
+import org.springframework.transaction.annotation.Transactional;
 import phoi.hello_spring.domain.Member;
 import phoi.hello_spring.repository.MemberRepository;
 import phoi.hello_spring.repository.MemoryMemberRepository;
@@ -7,6 +8,7 @@ import phoi.hello_spring.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
     private final MemberRepository memberRepository;
 
