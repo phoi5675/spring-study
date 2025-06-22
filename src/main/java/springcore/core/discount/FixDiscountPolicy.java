@@ -3,7 +3,7 @@ package springcore.core.discount;
 import springcore.core.member.Grade;
 import springcore.core.member.Member;
 
-public class FixDiscountPolicy implements DiscountPolicy{
+public class FixDiscountPolicy implements DiscountPolicy {
 
     private final int discountFixAmount = 1000;
     @Override
