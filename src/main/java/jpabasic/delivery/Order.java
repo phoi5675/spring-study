@@ -1,4 +1,4 @@
-package jpabasic;
+package jpabasic.delivery;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -14,6 +14,10 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
+
+    @OneToOne
+    @JoinColumn(name = "DELIVERY_ID")
+    private Delivery delivery;
 
     private LocalDateTime orderDate;
 

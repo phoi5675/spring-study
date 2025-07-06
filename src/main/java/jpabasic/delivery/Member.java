@@ -1,4 +1,4 @@
-package jpabasic;
+package jpabasic.delivery;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,15 +6,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Item {
+public class Member {
     @Id
     @GeneratedValue
-    @Column(name = "ITEM_ID")
+    @Column(name = "MEMBER_ID")
     private Long id;
 
     private String name;
 
-    private int price;
+    private String city;
 
-    private int stockQuantity;
+    private String street;
+
+    private String zipcode;
 }

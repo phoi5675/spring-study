@@ -1,4 +1,4 @@
-package jpabasic;
+package jpabasic.delivery;
 
 import javax.persistence.*;
 

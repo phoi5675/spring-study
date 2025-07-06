@@ -1,19 +1,22 @@
-package jpabasic;
+package jpabasic.delivery;
 
 import javax.persistence.*;
 
 @Entity
-public class Member {
+public class Delivery {
     @Id
     @GeneratedValue
-    @Column(name = "MEMBER_ID")
     private Long id;
-
-    private String name;
 
     private String city;
 
     private String street;
 
     private String zipcode;
+
+    private DeliveryStatus status;
+
+    @OneToOne
+    @JoinColumn(name = "ORDER_ID")
+    private Order order;
 }
