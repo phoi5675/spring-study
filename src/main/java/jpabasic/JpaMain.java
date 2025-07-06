@@ -1,5 +1,7 @@
 package jpabasic;
 
+import jpabasic.items.Movie;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,8 +17,23 @@ public class JpaMain {
         tx.begin();
 
         try {
-            System.out.println("Hello");
+            Movie movie = new Movie();
+            movie.setDirector("A");
+            movie.setActor("B");
+            movie.setName("Gone with the wild");
+            movie.setPrice(10000);
+
+            em.persist(movie);
+
+            em.flush();
+            em.clear();
+
+            Movie findMovie = em.find(Movie.class, movie.getId());
+            System.out.println("findMovie = " + findMovie);
+
+            tx.commit();
         } catch (Exception e) {
+            System.err.println(e.getMessage());
             tx.rollback();
         } finally {
             em.close();
