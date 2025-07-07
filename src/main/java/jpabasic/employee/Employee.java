@@ -3,7 +3,7 @@ package jpabasic.employee;
 import javax.persistence.*;
 
 @Entity
-public class Employee {
+public class Employee extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "EMPLOYEE_ID")
