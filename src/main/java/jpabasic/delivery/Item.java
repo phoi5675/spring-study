@@ -1,5 +1,6 @@
 package jpabasic.delivery;
 
+import jpabasic.employee.BaseEntity;
 import jpabasic.employee.Category;
 
 import javax.persistence.*;
@@ -9,7 +10,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn
-public class Item {
+public class Item extends BaseEntity {
     @Id
     @GeneratedValue
     @Column(name = "ITEM_ID")

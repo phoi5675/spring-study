@@ -1,9 +1,11 @@
 package jpabasic.delivery;
 
+import jpabasic.employee.BaseEntity;
+
 import javax.persistence.*;
 
 @Entity
-public class Delivery {
+public class Delivery extends BaseEntity {
     @Id
     @GeneratedValue
     private Long id;
