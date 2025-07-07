@@ -1,9 +1,9 @@
-package jpabasic.items;
+package jpabasic.delivery;
 
 import javax.persistence.Entity;
 
 @Entity
-public class Movie extends ItemInfo {
+public class Movie extends Item {
     private String director;
     private String actor;
 

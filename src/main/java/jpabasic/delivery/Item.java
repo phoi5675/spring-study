@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn
 public class Item {
     @Id
     @GeneratedValue
