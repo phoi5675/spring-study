@@ -18,7 +18,7 @@ public class Delivery extends BaseEntity {
 
     private DeliveryStatus status;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ORDER_ID")
     private Order order;
 }
