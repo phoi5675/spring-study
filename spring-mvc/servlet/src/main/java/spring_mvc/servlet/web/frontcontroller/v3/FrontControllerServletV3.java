@@ -26,9 +26,19 @@ public class FrontControllerServletV3 extends HttpServlet {
         controllerMap.put("/front-controller/v3/members", new MemberListControllerV3());
     }
 
+    private static MyView viewResolver(String viewName) {
+        return new MyView("/WEB-INF/views/" + viewName + ".jsp");
+    }
+
+    private static Map<String, String> createParamMap(HttpServletRequest req) {
+        Map<String, String> paramMap = new HashMap<>();
+        req.getParameterNames().asIterator()
+                .forEachRemaining(paramName -> paramMap.put(paramName, req.getParameter(paramName)));
+        return paramMap;
+    }
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("FrontControllerServletV3.service");
         String requestURI = req.getRequestURI();
 
         ControllerV3 controller = controllerMap.get(requestURI);
@@ -45,16 +55,5 @@ public class FrontControllerServletV3 extends HttpServlet {
 
         MyView view = viewResolver(viewName);
         view.render(modelView.getModel(), req, resp);
-    }
-
-    private static MyView viewResolver(String viewName) {
-        return new MyView("/WEB-INF/views/" + viewName + ".jsp");
-    }
-
-    private static Map<String, String> createParamMap(HttpServletRequest req) {
-        Map<String, String> paramMap = new HashMap<>();
-        req.getParameterNames().asIterator()
-                .forEachRemaining(paramName -> paramMap.put(paramName, req.getParameter(paramName)));
-        return paramMap;
     }
 }
