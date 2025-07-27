@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "a424a531-6f57-47e8-ab79-674fb51f1026",
+		"name": "spring-mvc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25863674"
+	},
+	"item": [
+		{
+			"name": "mapping",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/mapping/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mapping",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/mapping/users/{userId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mapping",
+								"users",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/mapping/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mapping",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/mapping/users/{userId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mapping",
+								"users",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/mapping/users/{userId}",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mapping",
+								"users",
+								"{userId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
