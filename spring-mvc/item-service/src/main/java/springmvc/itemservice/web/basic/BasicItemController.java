@@ -48,7 +48,7 @@ public class BasicItemController {
     public String addItem(@ModelAttribute("item") Item item) {
         itemRepository.save(item);
 
-        return "basic/item";
+        return "redirect:/basic/items/" + item.getId();
     }
 
     @GetMapping("/{itemId}/edit")
@@ -64,6 +64,5 @@ public class BasicItemController {
 
         return "redirect:/basic/items/{itemId}";
     }
-
 
 }
