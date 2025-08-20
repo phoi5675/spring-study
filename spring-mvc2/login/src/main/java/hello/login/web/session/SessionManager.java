@@ -21,7 +21,7 @@ public class SessionManager {
             return null;
         }
 
-        return Arrays.stream(cookies).filter(cookie -> SESSION_COOKIE_NAME.equals(cookieName)).findAny().orElse(null);
+        return Arrays.stream(cookies).filter(cookie -> cookie.getName().equals(cookieName)).findAny().orElse(null);
     }
 
     /**
